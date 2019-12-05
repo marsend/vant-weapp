@@ -8,7 +8,7 @@ type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 VantComponent({
   mixins: [touch],
 
-  classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
+  classes: ['nav-class', 'tabs-wrap-class', 'tabs-scroll-class', 'tab-class', 'tab-active-class', 'line-class'],
 
   relation: {
     name: 'tab',
