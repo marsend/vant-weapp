@@ -1,4 +1,4 @@
-<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="../wxs/utils.wxs" module="utils"/>
 
 <van-cell
   size="{{ size }}"
@@ -14,8 +14,8 @@
   arrow-direction="{{ arrowDirection }}"
   custom-class="van-field"
 >
-  <slot name="left-icon" slot="icon" />
-  <slot name="label" slot="title" />
+  <slot name="left-icon" slot="icon"/>
+  <slot name="label" slot="title"/>
   <view class="{{ utils.bem('field__body', [type, system]) }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"
@@ -36,6 +36,7 @@
       selection-end="{{ selectionEnd }}"
       selection-start="{{ selectionStart }}"
       bindinput="onInput"
+      bindkeyboardheightchange="onKeyboardHeightChange"
       bind:blur="onBlur"
       bind:focus="onFocus"
       bind:confirm="onConfirm"
@@ -61,6 +62,7 @@
       selection-start="{{ selectionStart }}"
       password="{{ password || type === 'password' }}"
       bindinput="onInput"
+      bindkeyboardheightchange="onKeyboardHeightChange"
       bind:blur="onBlur"
       bind:focus="onFocus"
       bind:confirm="onConfirm"
@@ -80,14 +82,15 @@
         class="van-field__icon-root {{ iconClass }}"
         custom-class="right-icon-class"
       />
-      <slot name="right-icon" />
-      <slot name="icon" />
+      <slot name="right-icon"/>
+      <slot name="icon"/>
     </view>
     <view class="van-field__button">
-      <slot name="button" />
+      <slot name="button"/>
     </view>
   </view>
-  <view wx:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
+  <view wx:if="{{ errorMessage }}"
+        class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
     {{ errorMessage }}
   </view>
 </van-cell>
