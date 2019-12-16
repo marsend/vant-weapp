@@ -76,6 +76,7 @@ VantComponent({
 
   data: {
     focused: false,
+    keyboardHeight: 0,
     system: getSystemInfoSync().system.split(' ').shift().toLowerCase()
   },
 
@@ -86,6 +87,12 @@ VantComponent({
       this.setData({ value }, () => {
         this.emitChange(value);
       });
+    },
+    onKeyboardHeightChange(event: Weapp.Event) {
+      const { height = 0 } = event.detail || {};
+      if(height !== this.data.keyboardHeight) {
+          this.$emit('keyboardheightchange', event.detail)
+      }
     },
 
     onFocus(event: Weapp.Event) {
