@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../miniprogram_npm/@vant/weapp/"
+    "outDir": "../miniapp/miniprogram_npm/@vant/weapp/"
   }
 }
