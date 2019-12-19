@@ -16,7 +16,7 @@ const exampleConfig = path.resolve(__dirname, '../tsconfig.example.json');
 
 const libDir = path.resolve(__dirname, '../lib');
 const esDir = path.resolve(__dirname, '../dist');
-const exampleDir = path.resolve(__dirname, '../../miniprogram_npm/@vant/weapp');
+const exampleDir = path.resolve(__dirname, '../../miniapp/miniprogram_npm/@vant/weapp');
 
 const lessCompiler = dist =>
   function compileLess() {
